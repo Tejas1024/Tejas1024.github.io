@@ -1,8 +1,7 @@
-javascript
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Use '/' if your repo is username.github.io, otherwise '/repo-name/'
+  base: '/'
 })
