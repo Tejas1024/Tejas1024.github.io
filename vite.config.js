@@ -3,13 +3,18 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/tejas-portfolio/',
-  server: {
-    host: true,
-    port: 5173,
+  base: './',
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.jsx?$/,
+    exclude: []
   },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+  optimizeDeps: {
+    esbuild: {
+      loader: {
+        '.js': 'jsx',
+        '.jsx': 'jsx'
+      }
+    }
   }
 })
